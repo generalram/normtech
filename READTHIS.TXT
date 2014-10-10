@@ -1,0 +1,34 @@
+These text files can help the average programmer become more
+professional by interfacing with the IBM PC memory. The text files
+that I have typed where ment for my Advanced C class, but any other
+language can use them, provided that language has utilities to poke or
+peek around with memory, or directly access memory so to speak. This
+information is from the IBM Technical reference manual version 2.02,
+and a few things could have changed since, but most should remain the
+same. I have added a few things, like INT 28 that makes DOS safe from a
+few TSR crashes and possible locations for certain display cards. Take
+note that I am not certain if they are true. I am only certain about the
+monocrome (IBM MDA) and color graphics (IBM CGA) memory area because I
+have used machines that have them. I don't have access to machines with
+VGA, PGA, TARGA, HERCULES and ect cards, and these cards may have routines
+in ROM somewhere to swap out 64K segments of memory which makes it a trick
+to write programs for those cards that do swap segments.
+
+Text Files:
+IBMMAP.TXT                   IBM PC Systems memory map
+MAP1.TXT                     First page of above, mostly 0-640K
+MAP2.TXT                     Second page of IBMMAP.TXT above 640K
+SINTER.TXT                   Software interupts listed, tells what they do.
+RMEMORY.TXT                  Reserved memory, shows where some things are
+                             stored. And areas of interest to BIOS.
+
+A special note, MAP1.TXT and MAP2.TXT are the whole megabyte of the MS-DOS
+(IBM PC-DOS) memory map for the 8088 split into 2. IBMMAP.TXT is the whole
+megabyte of the MS-DOS (IBM PC-DOS) memory map for the 8088 in one piece. It
+was split in two for those that want to print the map out and not have it over
+run the paper because the print utility can't handle page breaks. I have found
+that most printer utilities are useless because they can't manage the print
+paper right and advance too many lines or too few lines and the print ends up
+on the tear between pages anyway.
+
+P.S. I hope this helps a lot of programmers write better code

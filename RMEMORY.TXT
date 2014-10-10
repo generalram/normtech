@@ -1,0 +1,47 @@
+Norman King, advanced C project primer. IBM Memory
+
+Reserved memory:
+Address            Mode                    Function
+(Hex)
+400-48F            ROM BIOS                See BIOS listing
+490-4EF            N/A                     Reserved
+4F0-4FF            N/A                     Reserved as Intra-Application
+                                           Communication area for applications
+500-5FF            N/A                     Reserved for DOS and BASIC
+500                DOS                     Print Screen(PrtSc) Status Flag
+                                           0   - PrtSc not active or successful
+                                           print screen operation
+                                           1   - PrtSc in progress
+                                           255 - Error Encountered during
+                                           PrtSc operation
+504                DOS                     Single Drive Mode Status Byte
+510-511            BASIC                   BASIC's Segment Address Byte
+512-515            BASIC                   Clock Int Vector Segment:Offset
+516-519            BASIC                   Break Key Int Vec Segment:Offset
+51A-51D            BASIC                   Disk Error Int Vec Segment:Offset
+
+
+BIOS Memory Map:
+Starting Addres (In Hex)
+00000                              BIOS Interupt Vectors
+
+------------------------------------------------------------------
+00080                              Available Interrupt Vectors
+
+------------------------------------------------------------------
+00400                              BIOS Data Area
+
+------------------------------------------------------------------
+00500                              User Read/Write Memory
+
+------------------------------------------------------------------
+C8000                              Disk Adapter
+
+------------------------------------------------------------------
+F0000                              Read Only Memory (ROM BIOS chip)
+
+------------------------------------------------------------------
+FE000                              BIOS Program Area
+
+------------------------------------------------------------------
+

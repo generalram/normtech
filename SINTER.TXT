@@ -1,0 +1,66 @@
+Norman King, advanced C primer. Interupt listing
+
+8088 Software Interupt listing
+Address            Interupt #         Name             BIOS entry
+(Hex)              (Hex)
+0-3                0                  Divide by Zero   D_EOI
+4-7                1                  Single Step      D_EOI
+8-B                2                  Nonmaskable      NMI_INT
+C-F                3                  Breakpoint       D_EOI
+10-13              4                  Overflow         D_EOI
+14-17              5                  Print Screen     PRINT_SCREEN
+18-1B              6                  Reserved         D_EOI
+1D-1F              7                  Reserved         D_EOI
+20-23              8                  Time Of Day      TIMER_INT
+24-27              9                  Keyboard         KB_INT
+28-2B              A                  Reserved         D_EOI
+2C-2F              B                  Communications   D_EOI
+30-33              C                  Communications   D_EOI
+34-37              D                  DISK             D_EOI
+38-3B              E                  Diskette         DISK_INT
+3C-3F              F                  Printer          D_EOI
+40-43              10                 Video            VIDEO_IO
+44-47              11                 Equipment Check  EQUIPMENT
+48-4B              12                 Memory           MEMORY_SIZE_DETERMINE
+4C-4F              13                 Diskette/DISK    DISKETTE_IO
+50-53              14                 Communications   RS232_IO
+54-57              15                 Cassette         CASSETTE_IO
+58-5B              16                 Keyboard         KEYBOARD_IO
+5C-5F              17                 Printer          PRINTER_IO
+60-63              18                 Resident BASIC   F600:0000 IBM BASIC
+64-67              19                 Bootstrap        BOOT_STRAP
+68-6B              1A                 Time Of Day      TINE_OF_DAY
+6C-6F              1B                 Keyboard Break   DUMMY_RETURN
+70-73              1C                 Timer Tick       DUMMY_RETURN
+74-77              1D                 Video Init       VIDEO_PARMS
+78-7B              1E                 Diskette Param   DISK_BASE
+7C-7F              1F                 Video Grap Chars 0
+/* INT 20-FF didn't have a BIOS entry listed */
+80-83              20                 DOS program terminate
+84-87              21                 DOS Function call
+88-8B              22                 DOS terminate
+8C-8F              23                 DOS CTRL-BREAK exit address
+90-93              24                 DOS Fatal Error Vector
+94-97              25                 DOS Absolute Disk Read
+98-9B              26                 DOS Absolute Disk Write
+9C-9F              27                 DOS TSR, fix in storage
+A0-A3              28                 DOS Safe mode for TSR
+A4-FF              29-3F              Reserved for DOS, classified
+100-17F            40-5F              Reserved
+180-19F            60-67              Reserved for user software INT
+1A0-1FF            68-7F              Not Used
+200-217            80-85              Reserved for BASIC
+218-313            86-F0              BASIC in Interpridted mode
+314-3FF            F1-FF              Not used
+
+Address 300-3FF Used as Stack area during power-on and re-boot. Used by copy
+protection, and some nasty virus programs. Most virus checkers should look in
+this area for anything weird being passed around.
+
+Address 400-4FF Used for BIOS routines...
+
+Address 400-407 Contain the base addresses of any RS-232C cards attached to
+the system.
+
+Address 408-40F contain the base address of the printer adapter.
+
